@@ -1,0 +1,45 @@
+overlays:
+  IMDb-Top-250:
+    overlay:
+      name: IMDb-Top-250
+      file: /mnt/mvanbaaknas/pmm/pmm-config/overlays/IMDb-Top-250.png
+    imdb_chart: top_movies
+  HDR:
+    overlay:
+      name: HDR
+      file: /mnt/mvanbaaknas/pmm/pmm-config/overlays/HDR.png
+    plex_search:
+      all:
+        hdr: true
+  4K:
+    overlay:
+      name: 4K
+      file: /mnt/mvanbaaknas/pmm/pmm-config/overlays/4K.png
+    plex_search:
+      all:
+        resolution: 4K
+  4K-HDR:
+    overlay:
+      name: 4K-HDR
+      file: /mnt/mvanbaaknas/pmm/pmm-config/overlays/4K-HDR.png
+    suppress_overlays:
+      - HDR
+      - 4K
+    plex_search:
+      all:
+        resolution: 4K
+        hdr: true
+  4K-DV:
+    overlay:
+      name: 4K-DV
+      file: /mnt/mvanbaaknas/pmm/pmm-config/overlays/4K-DV.png
+    suppress_overlays:
+      - HDR
+      - 4K
+      - 4K-HDR
+    plex_search:
+      all:
+        resolution: 4K
+    filters:
+      has_dolby_vision: true
+

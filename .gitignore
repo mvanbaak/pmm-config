@@ -1,0 +1,7 @@
+# config.yml.template is config.yml, but without tokens/passwords
+config.yml
+
+UUID
+config.cache
+logs/
+reports/
