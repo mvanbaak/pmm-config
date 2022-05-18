@@ -3,3 +3,6 @@ collections:
     imdb_chart: top_movies
     collection_order: custom
     sync_mode: sync
+    visible_library: true
+    visible_home: true
+    visible_shared: true
