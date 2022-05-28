@@ -52,3 +52,13 @@ collections:
     sync_mode: sync
     collection_order: release
     schedule: weekly(sunday)
+  Zack Snyder:
+    tmdb_director: 15217 # https://www.themoviedb.org/person/15217-zack-snyder
+    tmdb_director_details: 15217
+    radarr_add_missing: true
+    radarr_add_existing: true
+    radarr_upgrade_existing: true
+    radarr_quality: 'HD 1080p HQ BHDStudio!'
+    radarr_tag: PMM
+    radarr_search: true
+     schedule: weekly(sunday)
