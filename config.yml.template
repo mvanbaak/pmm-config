@@ -6,8 +6,8 @@ settings:
   asset_depth: 1
   create_asset_folders: false
   prioritize_assets: false
-  dimensional_asset_rename:
-  download_url_assets:
+  dimensional_asset_rename: false
+  download_url_assets: false
   show_missing_season_assets: false
   show_missing_episode_assets: false
   show_asset_not_needed: true
@@ -21,7 +21,7 @@ settings:
   show_unmanaged: true
   show_filtered: true
   show_options: true
-  show_missing: true
+  show_missing: false
   only_filter_missing: false
   show_missing_assets: false
   save_report: true
@@ -31,7 +31,7 @@ settings:
   item_refresh_delay: 1
   playlist_sync_to_users: all
   playlist_report: true
-  custom_repo: https://raw.githubusercontent.com/mvanbaak/pmm-config/main/
+  custom_repo:
   verify_ssl: true
   check_nightly: true
 webhooks:
@@ -41,26 +41,26 @@ webhooks:
   run_end:
   changes:
 plex:
-  url: 
-  token: 
+  url:
+  token:
   timeout: 60
   clean_bundles: true
   empty_trash: true
   optimize: false
 tmdb:
-  apikey: 
+  apikey:
   language: en
   cache_expiration: 60
   region:
 tautulli:
-  url: 
-  apikey: 
+  url:
+  apikey:
 omdb:
-  apikey: 
+  apikey:
   cache_expiration: 60
 radarr:
-  url: 
-  token: 
+  url:
+  token:
   add_missing: false
   add_existing: false
   root_folder_path: /mnt/mvanbaaknas/Movies
@@ -73,8 +73,8 @@ radarr:
   plex_path:
   upgrade_existing: false
 sonarr:
-  url: 
-  token: 
+  url:
+  token:
   add_missing: false
   add_existing: false
   root_folder_path: /mnt/mvanbaaknas/Series
@@ -96,19 +96,97 @@ trakt:
   authorization:
     access_token:
     token_type: Bearer
-    expires_in:
+    expires_in: 7889238
     refresh_token:
     scope: public
-    created_at:
+    created_at: 1652531605
 
 libraries:
   Movies:
     metadata_path:
-      - file: /mnt/mvanbaaknas/pmm/pmm-config/Movies.yml
+      - git: PMM/award/oscars
+        template_variables:
+          data:
+            starting: current_year-10
+            ending: current_year
+      - git: PMM/chart/imdb
+      - git: PMM/movie/decade
+      - git: PMM/movie/franchise
+      - git: PMM/movie/universe
+      - git: PMM/movie/seasonal
+      - git: PMM/streaming
     overlay_path:
       - remove_overlays: false
-      - file: /mnt/mvanbaaknas/pmm/pmm-config/Overlays.yml
+      - git: PMM/overlays/audio_codec
+        template_variables:
+          use_opus: false
+          use_digital: false
+          use_dts: false
+          use_es: false
+          use_hd: false
+          use_plus: false
+      - git: PMM/overlays/imdb_top_250
+      - git: PMM/overlays/resolution
+      - git: PMM/overlays/special_release
+      - git: PMM/overlays/video_format
     report_path: /mnt/mvanbaaknas/pmm/pmm-config/reports/Movies.yml
     operations:
-      assets_for_all: true
-      delete_unmanaged_collections: false
+      delete_unmanaged_collections: true
+  TV Shows:
+    metadata_path:
+      - git: PMM/show/decade
+      - git: PMM/show/network
+      - git: PMM/streaming
+    overlay_path:
+      - remove_overlays: false
+      - git: PMM/overlays/audio_codec
+        template_variables:
+          use_opus: false
+          use_digital: false
+          use_dts: false
+          use_es: false
+          use_hd: false
+          use_plus: false
+      - git: PMM/overlays/audio_codec
+        template_variables:
+          overlay_level: episode
+          use_opus: false
+          use_digital: false
+          use_dts: false
+          use_es: false
+          use_hd: false
+          use_plus: false
+      - git: PMM/overlays/audio_codec
+        template_variables:
+          overlay_level: season
+          use_opus: false
+          use_digital: false
+          use_dts: false
+          use_es: false
+          use_hd: false
+          use_plus: false
+      - git: PMM/overlays/resolution
+      - git: PMM/overlays/resolution
+        template_variables:
+          overlay_level: episode
+      - git: PMM/overlays/resolution
+        template_variables:
+          overlay_level: season
+      - git: PMM/overlays/special_release
+      - git: PMM/overlays/special_release
+        template_variables:
+          overlay_level: episode
+      - git: PMM/overlays/special_release
+        template_variables:
+          overlay_level: season
+      - git: PMM/overlays/streaming
+      - git: PMM/overlays/video_format
+      - git: PMM/overlays/video_format
+        template_variables:
+          overlay_level: episode
+      - git: PMM/overlays/video_format
+        template_variables:
+          overlay_level: season
+    report_path: /mnt/mvanbaaknas/pmm/pmm-config/reports/TV_Shows.yml
+    operations:
+      delete_unmanaged_collections: true
