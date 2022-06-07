@@ -1,0 +1,41 @@
+templates:
+  director:
+    default:
+      radarr_add_missing: false
+      show_missing: true
+      radarr_quality: HD 1080p HQ BHDStudio!
+    tmdb_director: <<person>>
+    sync_mode: sync
+    collection_order: release
+    build_collection: false
+    show_missing: <<show_missing>>
+    allowed_library_types: movie
+    radarr_add_missing: <<radarr_add_missing>>
+    radarr_quality: <<radarr_quality>>
+    radarr_monitor: true
+    radarr_search: true
+    radarr_tag: PMM,PMM-<<collection_name>>
+    item_radarr_tag: PMM,PMM-<<collection_name>>
+    schedule: weekly(sunday)
+
+collections:
+  Quentin Tarantino:
+    template:
+      name: director
+      person: 138
+    radarr_add_missing: true
+  Christopher Nolan:
+    template:
+      name: director
+      person: 525
+    radarr_add_missing: true
+  Tim Burton:
+    template:
+      name: director
+      person: 510
+    radarr_add_missing: true
+  Zack Snyder:
+    template:
+      name: director
+      person: 15217
+    radarr_add_missing: true
