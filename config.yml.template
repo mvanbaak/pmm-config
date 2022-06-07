@@ -104,6 +104,7 @@ trakt:
 libraries:
   Movies:
     metadata_path:
+      - /mnt/mvanbaaknas/pmm/pmm-config/Movies.yml
       - git: PMM/award/oscars
         template_variables:
           data:
