@@ -110,12 +110,28 @@ libraries:
           data:
             starting: current_year-10
             ending: current_year
+        schedule:
+          - monthly(1)
       - git: PMM/chart/imdb
+        schedule:
+          - monthly(1)
+          - monthly(15)
       - git: PMM/movie/decade
+        schedule:
+          - monthly(5)
       - git: PMM/movie/franchise
+        schedule:
+          - weekly(thursday)
       - git: PMM/movie/universe
+        schedule:
+          - weekly(monday)
       - git: PMM/movie/seasonal
+        schedule:
+          - weekly(friday)
       - git: PMM/streaming
+        schedule:
+          - weekly(monday)
+          - weekly(friday)
     overlay_path:
       - remove_overlays: false
       - git: PMM/overlays/audio_codec
@@ -136,6 +152,8 @@ libraries:
   TV Shows:
     metadata_path:
       - git: PMM/show/decade
+        schedule:
+          - monthly(20)
       - git: PMM/show/network
       - git: PMM/streaming
     overlay_path:
