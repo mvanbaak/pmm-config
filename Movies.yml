@@ -19,6 +19,19 @@ templates:
     schedule: weekly(sunday)
 
 collections:
+  imdbtop250:
+    imdb_chart: top_movies
+    sync_mode: sync
+    collection_order: custom
+    build_collection: false
+    show_missing: true
+    radarr_add_missing: true
+    radarr_quality: HD 1080p HQ BHDStudio
+    radarr_monitor: true
+    radarr_search: true
+    radarr_tag: PMM,PMM-imdbtop250
+    item_radarr_tag: PMM,PMM-imdbtop250
+    schedule: weekly(wednesday)
   Quentin Tarantino:
     template:
       name: director
