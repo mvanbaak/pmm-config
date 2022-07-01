@@ -141,10 +141,20 @@ libraries:
           use_dts: false
           use_es: false
           use_hd: false
+          use_truehd: true
           use_plus: false
+          use_atmos: true
+          use_x: true
       - git: PMM/overlays/imdb_top_250
       - git: PMM/overlays/resolution
-      - git: PMM/overlays/special_release
+        template_variables:
+          use_4k: true
+          use_1080p: false
+          use_720p: false
+          use_576p: false
+          use_480p: false
+          use_dv: true
+          use_hdr: true
       - git: PMM/overlays/video_format
     report_path: /mnt/mvanbaaknas/pmm/pmm-config/reports/Movies.yml
     operations:
@@ -165,7 +175,10 @@ libraries:
           use_dts: false
           use_es: false
           use_hd: false
+          use_truehd: true
           use_plus: false
+          use_atmos: true
+          use_x: true
       - git: PMM/overlays/audio_codec
         template_variables:
           overlay_level: episode
@@ -174,7 +187,10 @@ libraries:
           use_dts: false
           use_es: false
           use_hd: false
+          use_truehd: true
           use_plus: false
+          use_atmos: true
+          use_x: true
       - git: PMM/overlays/audio_codec
         template_variables:
           overlay_level: season
@@ -183,21 +199,39 @@ libraries:
           use_dts: false
           use_es: false
           use_hd: false
+          use_truehd: true
           use_plus: false
+          use_atmos: true
+          use_x: true
       - git: PMM/overlays/resolution
+        template_variables:
+          use_4k: true
+          use_1080p: false
+          use_720p: false
+          use_576p: false
+          use_480p: false
+          use_dv: true
+          use_hdr: true
       - git: PMM/overlays/resolution
         template_variables:
           overlay_level: episode
+          use_4k: true
+          use_1080p: false
+          use_720p: false
+          use_576p: false
+          use_480p: false
+          use_dv: true
+          use_hdr: true
       - git: PMM/overlays/resolution
         template_variables:
           overlay_level: season
-      - git: PMM/overlays/special_release
-      - git: PMM/overlays/special_release
-        template_variables:
-          overlay_level: episode
-      - git: PMM/overlays/special_release
-        template_variables:
-          overlay_level: season
+          use_4k: true
+          use_1080p: false
+          use_720p: false
+          use_576p: false
+          use_480p: false
+          use_dv: true
+          use_hdr: true
       - git: PMM/overlays/streaming
       - git: PMM/overlays/video_format
       - git: PMM/overlays/video_format
