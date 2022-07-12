@@ -146,6 +146,7 @@ libraries:
           use_atmos: true
           use_x: true
       - git: PMM/overlays/imdb_top_250
+      - git: PMM/overlays/rt_cert_fresh
       - git: PMM/overlays/resolution
         template_variables:
           use_4k: true
@@ -233,6 +234,7 @@ libraries:
           use_dv: true
           use_hdr: true
       - git: PMM/overlays/streaming
+      - git: PMM/overlays/rt_cert_fresh
       - git: PMM/overlays/video_format
       - git: PMM/overlays/video_format
         template_variables:
